@@ -8,10 +8,8 @@ else if (numWeek == 4) Console.WriteLine("Четверг");
 else if (numWeek == 5) Console.WriteLine("Пятница");
 else if (numWeek == 6) Console.WriteLine("Суббота");
 else if (numWeek == 7)Console.WriteLine("Воскресенье");
-else
-{
-   Console.WriteLine("Не существует дня недели под этим номером"); 
-}
+else  Console.WriteLine("Не существует дня недели под этим номером"); 
+
 
 
 // if (numWeek == 1)
