@@ -6,17 +6,6 @@ int numB = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Теперь введем третье число ");
 int numC = Convert.ToInt32(Console.ReadLine());
 int numMax = numA;
-if (numMax <= numB) {
-    numMax=numB;
- if (numMax <= numC)
- {
-    numMax=numC;
-    Console.WriteLine($"Максимальным среди этих трех чисел является число {numC}"); 
- }
- else Console.WriteLine($"Максимальным среди этих трех чисел является число {numB}");
-}
-else 
-{
-    Console.WriteLine($"Максимальным среди этих трех чисел является число {numA}");
-}
-    
+if (numMax <= numB) numMax=numB;
+if (numMax <= numC)numMax=numC;
+ Console.WriteLine($"Максимальным среди этих трех чисел является число {numMax}"); 
