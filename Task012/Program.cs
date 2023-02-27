@@ -19,3 +19,19 @@ int FinalNumber(int num1, int num2)
     int div = num1%num2;
   return div;
 }
+
+
+// Вариант 2
+// Console.WriteLine("Введите первое число:");
+// int number1 = Convert.ToInt32(Console.ReadLine());
+
+// Console.WriteLine("Введите Второе число:");
+// int number2 = Convert.ToInt32(Console.ReadLine());
+
+// int remainsDigits = RemainsDigits(number1, number2);
+
+// Console.WriteLine(remainsDigits == 0 ? "Кратно" : $"Не кратно, остаток -> {remainsDigits}");
+
+// int RemainsDigits(int num1, int num2)
+// {
+//     return num1 % num2;
