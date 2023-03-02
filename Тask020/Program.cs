@@ -6,9 +6,9 @@
 // пространстве.
 // A (3,6); B (2,1) -> 5,09
 // A (7,-5); B (1,-1) -> 7,21
-Math.Sqrt(5);
-double res = 5.09987564;
-double resRound = Math.Round(res, 2, MidpointRounding.ToZero);
+// Math.Sqrt(5);
+// double res = 5.09987564;
+// double resRound = Math.Round(res, 2, MidpointRounding.ToZero);
 
 
 
@@ -29,3 +29,5 @@ double Distance(int xA, int yA, int xB, int yB)
 {
     return Math.Sqrt(Math.Pow(xA-xB, 2)+Math.Pow(yA-yB, 2));
 }
+
+
