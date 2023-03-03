@@ -22,7 +22,7 @@ return num % 10 == num/10000 && ((num - num % 10)/10)%10 == ((num - num % 1000)/
 
 bool FiveDigitCheck(int numb)
 {
-    return numb >= 10000 && numb <100000;
+    return (numb >= 10000 && numb <100000) || (numb <= -10000 && numb > -100000);
 }
 
 
