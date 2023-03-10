@@ -20,7 +20,7 @@ int Factorial(int num)
         {
             fukt = fukt*i; // ошибка переполнения результата (чтобы видеть не корявый результат) а то что выявляется ошибка
         }
-        fukt = fukt*i;
+        // fukt = fukt*i;
     }
     return fukt;
 }
