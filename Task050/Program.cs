@@ -15,7 +15,8 @@
 
 
 //Способ 2 (первый ниже )
-int[,] array2d = CreateMatrixRndInt(3, 4, 1, 100);
+
+int[,] array2d = CreateMatrixRndInt(3, 4, -100, 100);
 PrintMatrix(array2d);
 
 Console.WriteLine(
@@ -59,7 +60,7 @@ void PrintMatrix(int[,] matrix)
 
 bool ExistenceElement(int row, int jcolumn, int[,] arr)
 {
-    return i < arr.GetLength(0) && j < arr.GetLength(1);
+    return i>0 && i < arr.GetLength(0) && j>0 && j < arr.GetLength(1);
 }
 
 // int[,] array2d = CreateMatrixRndInt(3, 4, 1, 100);
