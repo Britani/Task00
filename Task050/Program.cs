@@ -13,28 +13,22 @@
 
 // 1, 7 -> такого элемента в массиве нет
 
-int[] PositionElement()
-{
-    int[] pos = new int[2];
-    Console.WriteLine(
-        "Чтобы узнать чему равен и существует ли элемент массива, введите его индекс по вертикали "
-    );
-    pos[0] = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine(" теперь введите его индекс по горизонтали ");
-    pos[1] = Convert.ToInt32(Console.ReadLine());
-    return pos;
 
-}
+//Способ 2 (первый ниже )
+int[,] array2d = CreateMatrixRndInt(3, 4, 1, 100);
+PrintMatrix(array2d);
 
-void PrintPosition(int[] position)
-{
-    for (int i = 0; i < position.Length-1; i++)
-    {
-       Console.Write($"{position[i]}, "); 
-    }
-     Console.Write($"{position[position.Length-1]} ");
+Console.WriteLine(
+    "Чтобы узнать чему равен и существует ли элемент массива, введите его индекс по вертикали "
+);
+int i = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(" теперь введите его индекс по горизонтали ");
+int j = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine();
 
-}
+string res = ExistenceElement(i, j, array2d) ? $"{i},{j} -> {array2d[i, j]}" : "Такого элемента в массиве нет";
+Console.WriteLine(res);
+
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
 {
     int[,] matrix = new int[rows, columns]; //0, 1
@@ -44,11 +38,10 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = rnd.Next(min, max+1);
+            matrix[i, j] = rnd.Next(min, max + 1);
         }
     }
     return matrix;
-
 }
 
 void PrintMatrix(int[,] matrix)
@@ -56,23 +49,81 @@ void PrintMatrix(int[,] matrix)
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         //Console.Write("[");
-    for (int j = 0; j < matrix.GetLength(1); j++)
-    {
-        Console.Write($"{matrix[i, j], 4}");
+        for (int j = 0; j < matrix.GetLength(1); j++)
+        {
+            Console.Write($"{matrix[i, j], 4}");
+        }
+        Console.WriteLine();
     }
-    Console.WriteLine();
-    }
-    
 }
 
-
-int[,] array2d = CreateMatrixRndInt(3, 4, 1, 100);
-PrintMatrix(array2d);
-int[] positions = PositionElement();
-PrintPosition(positions);
-
-if (positions[0]<array2d.GetLength(0) && positions[1]<array2d.GetLength(1))
+bool ExistenceElement(int row, int jcolumn, int[,] arr)
 {
-    Console.WriteLine($" -> {array2d[positions[0], positions[1]]}");
+    return i < arr.GetLength(0) && j < arr.GetLength(1);
 }
-else Console.WriteLine(" Такого элемента в массиве нет");
+
+// int[,] array2d = CreateMatrixRndInt(3, 4, 1, 100);
+// PrintMatrix(array2d);
+// int[] positions = PositionElement();
+// PrintPosition(positions);
+
+
+// if (positions[0]<array2d.GetLength(0) && positions[1]<array2d.GetLength(1))
+// {
+//     Console.WriteLine($" -> {array2d[positions[0], positions[1]]}");
+// }
+// else Console.WriteLine(" Такого элемента в массиве нет");
+
+
+//int[] PositionElement()
+// {
+//     int[] pos = new int[2];
+//     Console.WriteLine(
+//         "Чтобы узнать чему равен и существует ли элемент массива, введите его индекс по вертикали "
+//     );
+//     pos[0] = Convert.ToInt32(Console.ReadLine());
+//     Console.WriteLine(" теперь введите его индекс по горизонтали ");
+//     pos[1] = Convert.ToInt32(Console.ReadLine());
+//     return pos;
+
+// }
+
+// void PrintPosition(int[] position)
+// {
+//     for (int i = 0; i < position.Length-1; i++)
+//     {
+//        Console.Write($"{position[i]}, ");
+//     }
+//      Console.Write($"{position[position.Length-1]} ");
+
+// }
+
+// int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
+// {
+//     int[,] matrix = new int[rows, columns]; //0, 1
+//     Random rnd = new Random();
+
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         for (int j = 0; j < matrix.GetLength(1); j++)
+//         {
+//             matrix[i, j] = rnd.Next(min, max+1);
+//         }
+//     }
+//     return matrix;
+
+// }
+
+// void PrintMatrix(int[,] matrix)
+// {
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+//         //Console.Write("[");
+//     for (int j = 0; j < matrix.GetLength(1); j++)
+//     {
+//         Console.Write($"{matrix[i, j], 4}");
+//     }
+//     Console.WriteLine();
+//     }
+
+// }
