@@ -78,14 +78,18 @@ void PrintArray(int[] arr)
 
 int MinSumRows(int[] array)
 {
-    int min = 0;
-    for (int k = 0; k < array.Length - 1; k++)
-    {
-        for (int i = 0; i < array.Length - 1; i++)
-        {
-            if (array[i] < array[i + 1])  min = i;
-        }
-    }
+    int min = array[0];
+    int index = 0;
 
-    return min;
+    for (int i = 1; i < array.Length; i++)
+    {
+        if (min >= array[i])
+            min = array[i];
+    }
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i] == min)
+            index = i;
+    }
+    return index;
 }
