@@ -34,11 +34,6 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-// bool СonditionMatrixMultiplication(int[,] matrixD, int[,] matrixF)
-// {
-//     return matrixD.GetLength(1) != matrixF.GetLength(0);
-// }
-
 
 int[,] MultiplicationMatrix(int[,] matrixD, int[,] matrixF)
 {
